@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Threading;
+using DeviceContext = SharpDX.Direct2D1.DeviceContext;
 
 namespace D2dControl {
     public abstract class D2dControl : System.Windows.Controls.Image {
@@ -58,6 +59,8 @@ namespace D2dControl {
             get { return (double)GetValue( FrameTimePropertyKey.DependencyProperty ); }
             protected set { SetValue( FrameTimePropertyKey, value ); }
         }
+
+        public DeviceContext D2DRenderTarget => d2DRenderTarget;
 
         // - public methods --------------------------------------------------------------
 
